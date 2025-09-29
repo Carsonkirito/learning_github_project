@@ -39,30 +39,34 @@ git push -u origin master//此步骤可能需要挂梯
 
 ## 使用 Git LFS 以上传超过50MB的文件（ddl等）
 
-# 步骤 1：下载并安装 Git LFS  
+### 步骤 1：下载并安装 Git LFS  
 git lfs install  
 
-# 步骤 2：跟踪 DLL 文件或特定文件
+### 步骤 2：跟踪 DLL 文件或特定文件
 git lfs track "*.dll"
-# 或者只跟踪这个特定文件
+### 或者只跟踪这个特定文件
 git lfs track "opencv_world480.dll"  
 
-步骤 3：检查生成的 .gitattributes 文件
-bash
-cat .gitattributes
-# 应该看到：opencv_world480.dll filter=lfs diff=lfs merge=lfs -text  
+### 步骤 3：检查生成的 .gitattributes 文件
+cat .gitattributes  
 
-步骤 4：重新添加并提交文件
-bash
-# 从缓存中移除大文件（如果已添加）
+应该看到：opencv_world480.dll filter=lfs diff=lfs merge=lfs -text  
+
+### 步骤 4：重新添加并提交文件
+从缓存中移除大文件（如果已添加）  
+
 git rm --cached opencv_world480.dll
 
-# 重新添加文件（现在会通过 LFS 处理）
-git add opencv_world480.dll
-git add .gitattributes
+重新添加文件（现在会通过 LFS 处理）  
 
-# 提交更改
-git commit -m "chore: add opencv_world480.dll via Git LFS"
+git add opencv_world480.dll  
 
-# 推送到远程
+git add .gitattributes  
+
+提交更改  
+
+git commit -m "chore: add opencv_world480.dll via Git LFS"  
+
+推送到远程  
+
 git push origin master
