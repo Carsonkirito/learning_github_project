@@ -12,20 +12,39 @@ star:为项目点赞
 git config --global user.email "you@example.com"  
 git config --global user.name "Your Name"
 ```
-
+## 使用Git 管理项目
+### 第一步 创建一个本地的Git项目仓库
+1、直接clone别人的仓库：  
+在Github上点击Code复制项目地址（结尾有.git后缀），执行以下命令Git就会把整个项目仓库直接下载下来
+```bash
+git clone <url>      # 克隆远程仓库到本地
+```
+2、在电脑上新建一个文件夹：  
+在文件夹内使用以下命令会自动创建一个<ins>.git</ins>文件夹，这就是代码仓库（别乱动里面东西）
+```bash
+git init
+```
+其余参考上传项目部分
 ## 上传项目
 1.新建仓库，名称用英文简介用中文方便搜索，并钩上readme  
-
 2.在项目所在位置右键打开open-git-bash-here  
-
-3.输入<ins>git init</ins>，初始化git  
-
-4.输入<ins>git add .</ins>，将该文件夹内所有文件添加至暂存区  
-
-4.1输入<ins>git status</ins>，可查看暂存区文件状态  
-
-5.确认无误后输入<ins>git commit -m "任意字符"</ins>，将暂存区文件正式提交  
-
+3.初始化git
+```bash
+git init
+```
+4.将该文件夹内所有文件添加至暂存区  
+```bash
+git add .
+```
+查看暂存区文件状态
+```bash
+git status
+```
+5.确认无误后将暂存区文件正式提交
+```bash
+git commit -m "任意字符"
+# 任意字符为提交的备注，会显示在log中
+```
 到此，我们将文件备份到了本地仓库
 
 ## 链接github仓库和本地仓库
@@ -95,7 +114,8 @@ git rm <file>       # 删除文件
 ```bash
 git status          # 查看工作区状态
 git log             # 查看提交历史
-git diff            # 查看差异
+git log --stat      # 查看每次提交时都修改了哪些文件,可以得到commit id
+git diff            # 查看差异，后面可以加上commit id
 git show <commit>   # 显示特定提交详情
 git grep <pattern>  # 在代码中搜索
 git bisect          # 二分查找定位 Bug
@@ -109,6 +129,12 @@ git merge           # 合并分支
 git rebase          # 变基操作
 git reset           # 重置提交
 git tag             # 管理标签
+```
+### 🚢 代码回溯
+```bash
+# 执行两条任一，将代码回退到指定的节点commit id
+git reset --hard [commit id]
+git checkout [commit id]
 ```
 ### 👥 协作命令
 ```bash
@@ -141,6 +167,7 @@ git diff            # 未暂存的更改
 ```bash
 git branch          # 查看分支
 git switch main     # 切换到主分支
+git branch -b develop    # 创建新分支并使用
 git branch -d old-branch # 删除分支
 ```
 🆘 获取帮助
@@ -149,4 +176,21 @@ git help <command>      # 查看具体命令帮助
 git help -a             # 列出所有子命令
 git help -g             # 列出概念指南
 git help git            # Git 系统概述
+```
+## Git的分支
+同一程序的不同版本，功能略有不同，又可以互相合并  
+现在基本使用main作为主分支，用来保存测试稳定的代码  
+开发新功能时一般会在main的基础上复制出一个develop分支，并在这个分支上进行开发
+```bash
+git branch -b develop    # 创建新分支
+```
+发布时再把develop分支的代码合并到main上  
+```bash
+# 提交代码
+git add .
+git commit -m "新增xx功能"
+# 切换到主分支
+git checkout main
+# 合并
+git merge develop
 ```
