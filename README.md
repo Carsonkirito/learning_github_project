@@ -70,3 +70,8 @@ git commit -m "chore: add opencv_world480.dll via Git LFS"
 推送到远程  
 
 git push origin master
+
+```bash
+npm install
+npm start
+```
