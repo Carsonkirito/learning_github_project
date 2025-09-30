@@ -7,9 +7,10 @@ fork:将别人的项目仓库复制到自己的目录
 star:为项目点赞
 
 ## 在git工具中登录及配置账号与密码
+```bash
 git config --global user.email "you@example.com"  
-
 git config --global user.name "Your Name"
+```
 
 ## 上传项目
 1.新建仓库，名称用英文简介用中文方便搜索，并钩上readme  
