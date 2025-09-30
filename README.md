@@ -1,4 +1,4 @@
-# learning_github_project
+# github_study_project
 个人学习github各功能所用的测试项目  
 此文档同时用于学习README文档的编写
 
@@ -78,3 +78,75 @@ git commit -m "chore: add opencv_world480.dll via Git LFS"
 git push origin master
 ```
 
+## Git 命令分类详解
+### 🏁 初始化工作区
+```bash
+git clone <url>      # 克隆远程仓库到本地
+git init            # 初始化新的 Git 仓库
+```
+### 📁 处理当前变更
+```bash
+git add <file>      # 添加文件到暂存区
+git mv <file>       # 移动或重命名文件
+git restore <file>  # 恢复工作区文件
+git rm <file>       # 删除文件
+```
+### 🔍 查看历史和状态
+```bash
+git status          # 查看工作区状态
+git log             # 查看提交历史
+git diff            # 查看差异
+git show <commit>   # 显示特定提交详情
+git grep <pattern>  # 在代码中搜索
+git bisect          # 二分查找定位 Bug
+```
+### 🌱 管理历史记录
+```bash
+git commit          # 提交更改
+git branch          # 管理分支
+git switch          # 切换分支
+git merge           # 合并分支
+git rebase          # 变基操作
+git reset           # 重置提交
+git tag             # 管理标签
+```
+### 👥 协作命令
+```bash
+git fetch           # 下载远程更新
+git pull            # 拉取并合并远程更改
+git push            # 推送本地提交到远程
+```
+### 💡 常用命令组合示例
+日常开发流程
+```bash
+# 1. 开始新功能
+git clone https://github.com/user/repo.git
+git switch -c new-feature
+
+# 2. 开发并提交
+git add .
+git commit -m "添加新功能"
+git push origin new-feature
+
+# 3. 更新代码
+git pull origin main
+```
+查看状态和信息
+```bash
+git status          # 当前状态
+git log --oneline   # 简洁提交历史
+git diff            # 未暂存的更改
+```
+分支管理
+```bash
+git branch          # 查看分支
+git switch main     # 切换到主分支
+git branch -d old-branch # 删除分支
+```
+🆘 获取帮助
+```bash
+git help <command>      # 查看具体命令帮助
+git help -a             # 列出所有子命令
+git help -g             # 列出概念指南
+git help git            # Git 系统概述
+```
