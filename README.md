@@ -194,3 +194,12 @@ git checkout main
 # 合并
 git merge develop
 ```
+## 云服务器
+### 1. GitHub Pages (静态网站托管)
+这是 GitHub 提供的最主要的“云服务器”功能，但它有一个关键限制：只支持静态网站  
+GitHub Pages 在服务器端渲染的是静态文件（如 HTML, CSS, JavaScript, 图片等）  
+### 2. GitHub Codespaces (云端开发环境)
+这是一个完全不同的、功能强大的服务   
+GitHub Codespaces 为你提供一个完整的、基于云的 Visual Studio Code 开发环境。它本质上是一个配置好的 Linux 虚拟机（容器）  
+你可以在 Codespaces 环境中安装和配置任何你需要的软件  
+Codespaces 是一个 开发环境，而不是一个 生产环境。你可以在这里开发和测试你的 PHP 应用，但它通常不用于对外提供公开访问的网站服务（虽然它提供了一个临时的公共访问URL用于测试）  
