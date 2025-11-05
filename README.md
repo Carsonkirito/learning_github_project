@@ -198,6 +198,7 @@ git merge develop
 ### 1. GitHub Pages (静态网站托管)
 这是 GitHub 提供的最主要的“云服务器”功能，但它有一个关键限制：只支持静态网站  
 GitHub Pages 在服务器端渲染的是静态文件（如 HTML, CSS, JavaScript, 图片等）  
+[参考链接]([https://github.com](https://blog.csdn.net/m0_62979475/article/details/143818553))
 ### 2. GitHub Codespaces (云端开发环境)
 这是一个完全不同的、功能强大的服务   
 GitHub Codespaces 为你提供一个完整的、基于云的 Visual Studio Code 开发环境。它本质上是一个配置好的 Linux 虚拟机（容器）  
